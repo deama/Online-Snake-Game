@@ -63,3 +63,21 @@ Many things could be improved. For example, I am not really sure how multi-threa
 Further expanding the game would be interesting, such as adding multi-player functionality wherein two snakes would be in the same arena, and the one that hits the others' tail loses.  
 <br>
 For the snake game, the implementation of how it is streamed to the client is a bit cumbersome, currently the client asks for the entire grid information every request. I believe the best solution to this problem would be to implement the actual game on the client-side, and then simply hash the snake game source code and send it to the server every half a minute or so, the server would then verify the hash and if there was a difference, the score would not be submitted when the player finished playing. This would drastically reduce the load on the server, and make the game much smoother to play.
+
+
+# VM starter script
+sudo adduser --disabled-password --gecos "" jenkins
+sudo sed -i '21i jenkins ALL=(ALL:ALL) NOPASSWD:ALL ' /etc/sudoers
+sudo su jenkins
+sudo adduser --disabled-password --gecos "" pythonadm
+sudo sed -i '4i export MYSQL_USER="root" ' /home/pythonadm/.bashrc
+sudo sed -i '4i export MYSQL_PASSWORD="Pame121295" ' /home/pythonadm/.bashrc
+sudo sed -i '4i export MYSQL_HOST="x.x.x.x" ' /home/pythonadm/.bashrc
+sudo sed -i '4i export MYSQL_DB="proj" ' /home/pythonadm/.bashrc
+sudo sed -i '4i export SECRET_KEY="qqwertyuiop[asdfghjklzxcvbnn4567" ' /home/pythonadm/.bashrc
+sudo sed -i '4i export MYSQL_DB_TEST="proj_test" ' /home/pythonadm/.bashrc
+
+cd ~/
+mkdir .ssh/
+cd .ssh/
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCos2iV15xPvHycVYSPIIHZ5cmBLRz83stLpENn1HmUzBgG4qscSAsS9/0tcN56KLYC6Ry0rqHYsko89LWWWKKv9RF1SjDDM+VbbQipxASVJD71LOfLgSplsZJg+KzFxdpiVkPNRIz9EmX4A/44rg3Gj2gy8XwJL30LvZkmkB3Lp78e3N07oeeyVcwJ1op9+Uw/zEmsTOrk3xvlxw9seB7Q9eurY53mLZN6C5J+ttPPUacFQMxkzmzNLP8UHoHfVA4PgNJYrc+RPk6PQ7DZ/AXiTcXjVFkTCC0eWfkRxEBkt86xo0dOq3NMYm9MYJ0lEpGEtqZRW/qZdozPRciPEXox jenkins@jenkins-proj2" > authorized_keys​
