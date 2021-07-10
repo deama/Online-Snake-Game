@@ -67,17 +67,32 @@ For the snake game, the implementation of how it is streamed to the client is a 
 
 # VM starter script
 sudo adduser --disabled-password --gecos "" jenkins
+<br>
 sudo sed -i '21i jenkins ALL=(ALL:ALL) NOPASSWD:ALL ' /etc/sudoers
+<br>
 sudo su jenkins
+<br>
 sudo adduser --disabled-password --gecos "" pythonadm
+<br>
 sudo sed -i '4i export MYSQL_USER="root" ' /home/pythonadm/.bashrc
+<br>
 sudo sed -i '4i export MYSQL_PASSWORD="Pame121295" ' /home/pythonadm/.bashrc
+<br>
 sudo sed -i '4i export MYSQL_HOST="x.x.x.x" ' /home/pythonadm/.bashrc
+<br>
 sudo sed -i '4i export MYSQL_DB="proj" ' /home/pythonadm/.bashrc
+<br>
 sudo sed -i '4i export SECRET_KEY="qqwertyuiop[asdfghjklzxcvbnn4567" ' /home/pythonadm/.bashrc
+<br>
 sudo sed -i '4i export MYSQL_DB_TEST="proj_test" ' /home/pythonadm/.bashrc
+<br>
+<br>
 
 cd ~/
+<br>
 mkdir .ssh/
+<br>
 cd .ssh/
+<br>
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCos2iV15xPvHycVYSPIIHZ5cmBLRz83stLpENn1HmUzBgG4qscSAsS9/0tcN56KLYC6Ry0rqHYsko89LWWWKKv9RF1SjDDM+VbbQipxASVJD71LOfLgSplsZJg+KzFxdpiVkPNRIz9EmX4A/44rg3Gj2gy8XwJL30LvZkmkB3Lp78e3N07oeeyVcwJ1op9+Uw/zEmsTOrk3xvlxw9seB7Q9eurY53mLZN6C5J+ttPPUacFQMxkzmzNLP8UHoHfVA4PgNJYrc+RPk6PQ7DZ/AXiTcXjVFkTCC0eWfkRxEBkt86xo0dOq3NMYm9MYJ0lEpGEtqZRW/qZdozPRciPEXox jenkins@jenkins-proj2" > authorized_keys​
+<br>
